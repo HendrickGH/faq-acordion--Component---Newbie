@@ -198,7 +198,7 @@ body {
 		padding: 0 4.8rem 4.8rem 3.2rem;
 	}
 }
-@media (max-height: 40em) {
+@media (max-height: 40em) and (max-width: 41em) {
 	body {
 		height: initial;
 	}
