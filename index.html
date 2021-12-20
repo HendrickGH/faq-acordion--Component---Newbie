@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./images/favicon-32x32.png"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>Frontend Mentor | FAQ Accordion Card</title>
+	</head>
+	<body>
+		<main class="main">
+			<div class="container">
+				<section class="container-box-img">
+					<figure class="box-img">
+						<img
+							src="images/illustration-woman-online-desktop.svg"
+							alt="Common FAQ and responses"
+							class="img"
+						/>
+					</figure>
+					<img
+						src="images/illustration-box-desktop.svg"
+						alt="Illustration"
+						class="img-illustration"
+					/>
+				</section>
+				<section class="container-box-text">
+					<h1 class="title">FAQ</h1>
+					<div class="box-text">
+						<article class="article active">
+							<header class="header">
+								<p class="article-title">How many team members can I invite?</p>
+								<img
+									src="images/icon-arrow-down.svg"
+									alt="See more!"
+									class="icon"
+								/>
+							</header>
+							<div class="article-box">
+								<p class="text-article-box">
+									You can invite up to 2 additional users on the Free plan.
+									There is no limit on team members for the Premium plan.
+								</p>
+							</div>
+						</article>
+						<article class="article">
+							<header class="header">
+								<p class="article-title">
+									What is the maximum file upload size?
+								</p>
+								<img
+									src="images/icon-arrow-down.svg"
+									alt="See more!"
+									class="icon"
+								/>
+							</header>
+							<div class="article-box">
+								<p class="text-article-box">
+									You can invite up to 2 additional users on the Free plan.
+									There is no limit on team members for the Premium plan.
+								</p>
+							</div>
+						</article>
+						<article class="article">
+							<header class="header">
+								<p class="article-title">How do I reset my password?</p>
+								<img
+									src="images/icon-arrow-down.svg"
+									alt="See more!"
+									class="icon"
+								/>
+							</header>
+							<div class="article-box">
+								<p class="text-article-box">
+									Click “Forgot password” from the login page or “Change
+									password” from your profile page. A reset link will be emailed
+									to you.
+								</p>
+							</div>
+						</article>
+						<article class="article">
+							<header class="header">
+								<p class="article-title">Can I cancel my subscription?</p>
+								<img
+									src="images/icon-arrow-down.svg"
+									alt="See more!"
+									class="icon"
+								/>
+							</header>
+							<div class="article-box">
+								<p class="text-article-box">
+									Yes! Send us a message and we’ll process your request no
+									questions asked.
+								</p>
+							</div>
+						</article>
+						<article class="article">
+							<header class="header">
+								<p class="article-title">Do you provide additional support?</p>
+								<img
+									src="images/icon-arrow-down.svg"
+									alt="See more!"
+									class="icon"
+								/>
+							</header>
+							<div class="article-box">
+								<p class="text-article-box">
+									Chat and email support is available 24/7. Phone lines are open
+									during normal business hours.
+								</p>
+							</div>
+						</article>
+					</div>
+				</section>
+			</div>
+		</main>
+		<script>
+			const arrows = document.querySelectorAll('.header');
+			const articles = [...document.querySelectorAll('.article')];
+			const getPrevOpen = artic => artic.classList.contains('active');
+			const showInfo = arrow => {
+				arrow.addEventListener('click', () => {
+					const prev = articles.findIndex(getPrevOpen);
+					articles[prev].classList.remove('active');
+					arrow.parentElement.classList.add('active');
+				});
+			};
+			arrows.forEach(showInfo);
+		</script>
+	</body>
+</html>

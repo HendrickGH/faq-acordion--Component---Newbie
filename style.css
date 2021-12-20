@@ -1,0 +1,205 @@
+/*
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+#### Text
+
+- Very dark desaturated blue: hsl(238, 29%, 16%)
+- Soft red: hsl(14, 88%, 65%)
+
+#### Gradient
+
+Background gradient:
+
+- Soft violet: hsl(273, 75%, 66%)
+- Soft blue: hsl(240, 73%, 65%)
+
+### Neutral
+
+#### Text
+
+- Very dark grayish blue: hsl(237, 12%, 33%)
+- Dark grayish blue: hsl(240, 6%, 50%)
+
+#### Dividers
+
+- Light grayish blue: hsl(240, 5%, 91%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 12px
+
+### Font
+
+- Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+- Weights: 400, 700
+*/
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font-family: 'Kumbh Sans', sans-serif;
+	background-image: linear-gradient(
+			to top,
+			rgba(101, 101, 231, 1),
+			rgba(166, 103, 233, 0.8)
+		),
+		url('images/bg-pattern-desktop.svg');
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+.main {
+	background-color: #fff;
+	border-radius: 2.4rem;
+	width: 80rem;
+}
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background-image: url(images/bg-pattern-desktop.svg);
+	background-size: cover;
+	object-fit: cover;
+	height: 40rem;
+}
+.container-box-img {
+	overflow: hidden;
+}
+.box-img {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+.img {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 50%;
+	transform: translate(-15%, 7%);
+	filter: drop-shadow(0 7rem 0 rgba(175, 103, 233, 0.1));
+}
+.img-illustration {
+	position: absolute;
+	width: 15rem;
+	left: 25%;
+	transform: translate(-100%, 100%);
+}
+.container-box-text {
+	padding: 4.8rem;
+	padding-left: 0;
+}
+.title {
+	font-size: 3.2rem;
+	font-weight: 700;
+	color: #1d1e35;
+}
+.box-text {
+	margin-top: 2.4rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+}
+.header {
+	display: flex;
+	justify-content: space-between;
+}
+.article {
+	border-bottom: 1px solid #e7e7e9;
+	padding-bottom: 1.2rem;
+}
+.article-title {
+	color: #4a4b5e;
+	font-weight: 400;
+	font-size: 1.2rem;
+	cursor: pointer;
+	transition: color 0.3s;
+}
+.icon {
+	width: 1.2rem;
+	height: 0.8rem;
+}
+.text-article-box {
+	color: hsl(240, 6%, 50%);
+	font-weight: 400;
+	font-size: 1rem;
+	margin-right: 0.8rem;
+}
+/* AMAZING EFFECTS WITH CSS AND JS! */
+.article-box {
+	display: none;
+}
+.header {
+	cursor: pointer;
+}
+.active .article-title {
+	color: #1d1e35;
+	font-weight: 700;
+	margin-bottom: 1.2rem;
+}
+.active .article-box {
+	display: block;
+}
+.article-title:hover {
+	color: #f47c57;
+}
+.active .icon {
+	transform: rotate(180deg);
+}
+@media (max-width: 41em) {
+	body {
+		justify-content: flex-start;
+		height: 100vh;
+	}
+	.main {
+		margin: 11.2rem 3.2rem 2.4rem 2.4rem;
+		margin-top: 11.2rem;
+		width: unset;
+	}
+	.container {
+		grid-template-columns: 1fr;
+		grid-template-rows: 150px auto;
+		height: initial;
+	}
+	.container-box-img {
+		overflow: visible;
+	}
+	.img {
+		bottom: unset;
+		transform: translateY(-50%);
+		width: 70%;
+	}
+	.img-illustration {
+		left: initial;
+		transform: translate(70%, -20%);
+		width: 10rem;
+	}
+	.container-box-text {
+		padding: 0 4.8rem 4.8rem 3.2rem;
+	}
+}
+@media (max-height: 40em) {
+	body {
+		height: initial;
+	}
+}
